@@ -48,7 +48,7 @@ export const tailwindColors: Record<string, string> = {
 };
 
 const config: Config = {
-  content: ["./src/app/**/*.{ts,tsx}"],
+  content: ["./src/app/**/*.{tsx,jsx}"],
   theme: {
     colors: tailwindColors,
   },
