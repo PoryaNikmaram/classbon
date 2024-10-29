@@ -54,6 +54,11 @@ const config: Config = {
     container: {
       center: true,
     },
+    extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/images/tile.svg')",
+      },
+    },
   },
   plugins: [],
   darkMode: "class",
