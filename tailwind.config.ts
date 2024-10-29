@@ -51,7 +51,11 @@ const config: Config = {
   content: ["./src/app/**/*.{tsx,jsx}"],
   theme: {
     colors: tailwindColors,
+    container: {
+      center: true,
+    },
   },
   plugins: [],
+  darkMode: "class",
 };
 export default config;
