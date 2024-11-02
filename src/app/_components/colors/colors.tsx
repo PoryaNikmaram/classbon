@@ -20,7 +20,7 @@ const ColorBox: React.FC<{ name: string; color: string }> = ({
 }) => (
   <div
     className="w-96 h-60 flex flex-col items-center justify-center text-center uppercase"
-    style={{ backgroundColor: color  , color : getTextColor(color)}}
+    style={{ backgroundColor: color, color: getTextColor(color) }}
   >
     <span>{name}</span>
     <span>{color}</span>
