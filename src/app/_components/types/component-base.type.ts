@@ -8,4 +8,3 @@ export type ComponentBase = {
   className?: string;
 };
 
-console.log("salam");
