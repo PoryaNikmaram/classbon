@@ -7,3 +7,5 @@ export type ComponentBase = {
   isDisabled?: boolean;
   className?: string;
 };
+
+console.log("salam");
