@@ -16,7 +16,7 @@ const shapeClasses: Record<ButtonShape, string> = {
   default: "",
 };
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   variant,
   size = "normal",
   isDisabled = false,
@@ -50,5 +50,3 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
