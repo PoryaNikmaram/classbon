@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
 
-const figtree = Figtree({
+export const figtree = Figtree({
   display: "swap",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],

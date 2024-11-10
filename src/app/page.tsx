@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Button from "./_components/button/button";
 export default function Home() {
   return (
     <>
@@ -9,14 +9,22 @@ export default function Home() {
             <h3 className="text-xl xl:text-2xl dark:text-info">
               خوش اومدی به ...
             </h3>
-            <h1 className=" text-3xl lg:text-5xl xl:text-5xl font-black gradient py-2 my-5">
+            <h1 className=" text-3xl lg:text-5xl xl:text-5xl font-black gradient">
               مسیر صعود به قله‌های برنامه‌نویسی
             </h1>
-            <p className="max-w-2xl  text-lg md:text-xl font-bold leading-8 mb-2">
+            <p className="max-w-2xl  text-lg md:text-xl font-bold leading-8">
               هر جای مسیرِ برنامه‌نویسی که باشی، با هم‌راهی استادهای باتجربهٔ
               کلاسبن می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه
               هواتو داریم.
             </p>
+            <div className="mt-5 flex gap-4">
+              <Button variant="primary" size="large">
+                دوره‌های ری‌اکت و نکست
+              </Button>
+              <Button variant="neutral" size="large">
+                مشاوره برنامه‌نویسی
+              </Button>
+            </div>
             <Image
               src="/images/frameworks.png"
               className="grayscale mt-4 opacity-70 m-auto xl:m-0"
