@@ -1,6 +1,6 @@
+import { Size } from "../types/size.type";
 import classNames from "classnames";
 import { ButtonProps, ButtonShape } from "./button.types";
-import { Size } from "../types/size.type";
 
 const sizeClasses: Record<Size, string> = {
   tiny: "btn-xs",
@@ -16,7 +16,7 @@ const shapeClasses: Record<ButtonShape, string> = {
   default: "",
 };
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   variant,
   size = "normal",
   isDisabled = false,
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   className,
   ...rest
-}) => {
+}: ButtonProps) => {
   const classes = classNames(
     "btn",
     className,
@@ -50,5 +50,3 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
