@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Loading } from "./loading";
+import results from "../../../../.jest-test-results.json";
+import { withTests } from "@storybook/addon-jest";
 
 const meta: Meta<typeof Loading> = {
   component: Loading,
@@ -15,6 +17,11 @@ const meta: Meta<typeof Loading> = {
 export default meta;
 
 type Story = StoryObj<typeof Loading>;
+
+export const Tests: Story = {
+  render: (args) => <Loading {...args}>Click here</Loading>,
+};
+Tests.decorators = [withTests({ results })];
 
 export const LoadingSpinner: Story = {
   render: () => (
