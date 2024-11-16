@@ -3,6 +3,8 @@ import { Button } from "./button";
 import results from "../../../../.jest-test-results.json";
 import { withTests } from "@storybook/addon-jest";
 
+type Story = StoryObj<typeof Button>;
+
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
@@ -15,8 +17,6 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-
-type Story = StoryObj<typeof Button>;
 
 export const Tests: Story = {
   render: (args) => <Button {...args}>Click here</Button>,

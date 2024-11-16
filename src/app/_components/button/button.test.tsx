@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import test, { describe } from "node:test";
+import { describe } from "node:test";
 import { Button } from "./button";
 
 describe("Button", () => {
@@ -21,5 +21,19 @@ describe("Button", () => {
   it("check if button disabled correctly", () => {
     const { getByText } = render(<Button isDisabled>disabled</Button>);
     expect(getByText("disabled")).toBeDisabled();
+  });
+
+  it("show rendered button (html)", () => {
+    render(
+      <Button
+        variant="primary"
+        isOutlined={true}
+        size="large"
+        isDisabled={true}
+      >
+        Click me
+      </Button>
+    );
+    screen.debug();
   });
 });
