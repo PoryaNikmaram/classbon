@@ -9,7 +9,7 @@ const HomeHeroSection: React.FC = () => {
           <h3 className="text-xl xl:text-2xl dark:text-info">
             خوش اومدی به ...
           </h3>
-          <h1 className=" text-3xl lg:text-5xl xl:text-5xl font-black gradient">
+          <h1 className=" text-3xl lg:text-5xl xl:text-5xl font-black gradient py-4">
             مسیر صعود به قله‌های برنامه‌نویسی
           </h1>
           <p className="max-w-2xl  text-lg md:text-xl font-bold leading-8">

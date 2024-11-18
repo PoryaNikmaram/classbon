@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.mjs"
-  ],
+, "icons/icons-svg/icon-template.tst"  ],
   "exclude": ["node_modules"]
 }
