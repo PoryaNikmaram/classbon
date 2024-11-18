@@ -17,7 +17,7 @@ const HomeHeroSection: React.FC = () => {
             کلاسبن می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه
             هواتو داریم.
           </p>
-          <div className="mt-5 flex gap-4">
+          <div className="mt-5 flex gap-4 justify-center xl:justify-start">
             <Button variant="primary" size="large">
               دوره‌های ری‌اکت و نکست
             </Button>
