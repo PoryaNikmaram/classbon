@@ -56,7 +56,7 @@ exports[`Home hero section display the home hero section:
           خوش اومدی به ...
         </h3>
         <h1
-          class=" text-3xl lg:text-5xl xl:text-5xl font-black gradient"
+          class=" text-3xl lg:text-5xl xl:text-5xl font-black gradient py-4"
         >
           مسیر صعود به قله‌های برنامه‌نویسی
         </h1>
