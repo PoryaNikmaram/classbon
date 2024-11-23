@@ -5,8 +5,8 @@ import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { CourseCardList } from "./(courses)/_components/course-card-list";
 import { Button } from "./_components/button";
 import Feature from "./_components/feature/feature";
-import HomeHeroSection from "./_components/home-hero-section/home-hero-section";
 import { IconArrowLeftFill } from "./_components/icons/icons";
+import HomeHeroSection from "./_components/home-hero-section/home-hero-section";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(
