@@ -7,19 +7,21 @@ import { Button } from "./_components/button";
 import Feature from "./_components/feature/feature";
 import { IconArrowLeftFill } from "./_components/icons/icons";
 import HomeHeroSection from "./_components/home-hero-section/home-hero-section";
+import { API_URL } from "@/configs/global";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`,
-    {
-      next: { revalidate: 24 * 60 * 60 },
-    }
-  );
+  const res = await fetch(`${API_URL}/courses/newest/${count}`, {
+    next: { revalidate: 24 * 60 * 60 },
+    cache: "no-store",
+  });
   return res.json();
 }
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
+  const res = await fetch(`${API_URL}/blog/newest/${count}`, {
+    next: { revalidate: 24 * 60 * 60 },
+    cache: "no-store",
+  });
   return res.json();
 }
 
