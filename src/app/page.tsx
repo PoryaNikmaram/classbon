@@ -5,6 +5,8 @@ import { homeFeatures } from "@/data/home-features";
 import Feature from "./_components/feature/feature";
 import { Button } from "./_components/button";
 import { IconArrowLeftFill } from "./_components/icons/icons";
+import { BlogPostSummary } from "@/types/blog-post-summary.interface";
+import { useMemo } from "react";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(
@@ -15,8 +17,23 @@ async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   );
   return res.json();
 }
+
+async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
+  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
+  return res.json();
+}
+
 export default async function Home() {
-  const newestCourses = await getNewestCourses(4);
+  const newestCoursesData = getNewestCourses(4);
+  const newestPostsData = getNewestPosts(4);
+
+  const [newestCourses, newestPosts] = await Promise.allSettled([
+    newestCoursesData,
+    newestPostsData,
+  ]);
+
+  console.log(newestPosts);
+
   return (
     <>
       <HomeHeroSection />
@@ -34,7 +51,11 @@ export default async function Home() {
             برای به‌روز موندن، یاد گرفتن نکته‌های تازه ضروری‌ه!
           </p>
         </div>
-        <CourseCardList courses={newestCourses} />
+        <CourseCardList
+          courses={
+            newestCourses.status === "fulfilled" ? newestCourses.value : []
+          }
+        />
       </section>
       <section className="px-2 my-40">
         <div className="relative pt-0 text-center">
