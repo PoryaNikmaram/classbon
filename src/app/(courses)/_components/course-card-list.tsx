@@ -14,7 +14,6 @@ async function getNewestCourses(count: number): Promise<CourseSummary[]> {
     cache: "no-store",
   });
 
-  await new Promise((resolve) => setTimeout(resolve, 5000));
   return res.json();
 }
 
