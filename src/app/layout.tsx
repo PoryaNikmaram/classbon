@@ -3,6 +3,7 @@ import { Baloo_Bhaijaan_2 } from "next/font/google";
 import "./globals.css";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
+import QueryProvider from "@/providers/react-query-provider";
 
 export const figtree = Figtree({
   display: "swap",
@@ -26,9 +27,11 @@ export default async function RootLayout({
   return (
     <html dir="rtl" className={`dark ${bahoo.variable}`}>
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-bold uppercase  bg-white text-base-100 dark:bg-base-100 dark:text-base-content">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
