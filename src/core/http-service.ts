@@ -74,11 +74,11 @@ httpService.interceptors.response.use(
             detail: "خطای سرور",
           } as UnhandledException;
         }
-      } else {
-        throw {
-          detail: "خطای شبکه",
-        } as NetworkError;
       }
+    } else {
+      throw {
+        detail: "خطای شبکه",
+      } as NetworkError;
     }
   }
 );
@@ -90,7 +90,10 @@ async function apiBase<T>(
   return response.data as T;
 }
 
-async function readData<T>(url: string, headers: AxiosHeaders): Promise<T> {
+export async function readData<T>(
+  url: string,
+  headers: AxiosHeaders
+): Promise<T> {
   const options: AxiosRequestConfig = {
     headers: headers,
     method: "GET",
@@ -111,7 +114,7 @@ async function createData<TModel, TResult>(
   return await apiBase<TResult>(url, options);
 }
 
-async function updateData<TModel, TResult>(
+export async function updateData<TModel, TResult>(
   url: string,
   data: TModel,
   headers: AxiosHeaders
@@ -125,7 +128,7 @@ async function updateData<TModel, TResult>(
   return await apiBase<TResult>(url, options);
 }
 
-async function deleteData(
+export async function deleteData(
   url: string,
   headers?: AxiosResponseHeaders
 ): Promise<void> {
