@@ -1,6 +1,6 @@
 import { API_URL } from "@/configs/global";
 import type { CourseDetails } from "@/types/course-details.interface";
-import { CourseAside } from "./_components/course-aside";
+import { CourseAside } from "./_components/course-aside/course-aside";
 import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tabs";
 import { Accordion } from "@/app/_components/accordion";

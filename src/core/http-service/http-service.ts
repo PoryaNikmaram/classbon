@@ -1,7 +1,5 @@
 import { API_URL } from "@/configs/global";
-
 import { ApiError } from "@/types/http-errors.interface";
-
 import axios, {
   AxiosHeaders,
   AxiosRequestConfig,
@@ -33,9 +31,10 @@ httpService.interceptors.response.use(
     }
   }
 );
+
 async function apiBase<T>(
   url: string,
-  options: AxiosRequestConfig
+  options?: AxiosRequestConfig
 ): Promise<T> {
   const response: AxiosResponse = await httpService(url, options);
   return response.data as T;
@@ -43,7 +42,7 @@ async function apiBase<T>(
 
 export async function readData<T>(
   url: string,
-  headers: AxiosHeaders
+  headers?: AxiosHeaders
 ): Promise<T> {
   const options: AxiosRequestConfig = {
     headers: headers,
